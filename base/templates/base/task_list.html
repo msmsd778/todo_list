@@ -1,5 +1,6 @@
 {% extends 'base/main.html' %}
 {% block content %}
+<div>
   <div class="header-bar">
     <div>
       <h2>Hello {{request.user|title}}</h2>
@@ -14,7 +15,7 @@
 
   <div id="search-add-wrapper">
     <form method="GET" style="margin-top:20px;display:flex;">
-      <input type="text" name="search-area" value="{{search_input}}">
+      <input type="text" ng-model="handle" name="search-area" value="{{search_input}}">
       <input class="btn btn-outline-primary" type="submit" value="Search" style="margin-right:10px;">
     <form>
     <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
@@ -41,5 +42,5 @@
       <h3>No items in the list</h3>
     {% endfor %}
   </div>
-
+</div>
 {% endblock content %}
